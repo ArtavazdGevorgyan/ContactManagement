@@ -2,56 +2,63 @@ import sqlite3
 from sqlite3 import Error
 
 
-def create_connection(path):
-    connection = None
-    try:
-        connection = sqlite3.connect(path)
-    except Error as error:
-        print(f"Error: {error}")
+class DB:
+    indicator = None
 
-    return connection
+    def __init__(self, path='info.db'):
+        self.__connection = self.__create_connection(path)
+        self.__create_table()
 
+    def __new__(cls, *args):
+        if cls.indicator == None:
+            cls.indicator = super().__new__(cls)
+        return cls.indicator
 
-def execute_query(connection, query):
-    """Executes a query to create or insert date into database
+    def __create_connection(self, path):
+        connection = None
+        try:
+            connection = sqlite3.connect(path)
+        except Error as error:
+            print(f"Error: {error}")
 
-    Args:
-        connection (connection): Connection to DB
-        query (str): SQL query
-    """
-    cursor = connection.cursor()
-    try:
-        cursor.execute(query)
-        connection.commit()
-    except Error as error:
-        print(f"Error: {error}")
+        return connection
 
+    def execute_query(self, query):
+        """Executes a query to create or insert date into database
 
-def create_table(connection):
-    query = """
-    CREATE TABLE IF NOT EXISTS contacts(
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name VARCHAR(30),
-        surname VARCHAR(30),
-        email TEXT(50),
-        phone VARCHAR(15),
-        gender VARCHAR(7)
-    )
-    """
-    execute_query(connection, query)
+        Args:
+            query (str): SQL query
+        """
+        cursor = self.__connection.cursor()
+        try:
+            cursor.execute(query)
+            self.__connection.commit()
+        except Error as error:
+            print(f"Error: {error}")
 
+    def __create_table(self):
+        query = """
+        CREATE TABLE IF NOT EXISTS contacts(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name VARCHAR(30) NOT NULL,
+            surname VARCHAR(30),
+            email TEXT(50) UNIQUE,
+            phone VARCHAR(15) UNIQUE,
+            gender VARCHAR(7)
+        )
+        """
+        self.execute_query(query)
 
-def execute_read_query(connection, query):
-    """Executes a query to get data from database
+    def execute_read_query(self, query):
+        """Executes a query to get data from database
 
-    Args:
-        connection (connection): Connection to DB
-        query (str): SQL query
-    """
-    try:
-        cursor = connection.cursor()
-        cursor.execute(query)
-        result = cursor.fetchall()
-        return result
-    except Error as error:
-        print(f"Error: {error}")
+        Args:
+            query (str): SQL query
+        """
+        try:
+            cursor = self.__connection.cursor()
+            cursor.execute(query)
+            result = cursor.fetchall()
+            return result
+        except Error as error:
+            print(f"Error: {error}")
