@@ -14,6 +14,7 @@ This is a simple terminal application for managing contacts. With this app, you 
 ## Contact Attributes
 ### Each contact has the following attributes:
 
+* 'ID' - Unique number for each contact
 * 'Name' - A string no longer than 30 letters and can't be empty.
 * 'Surname' - A string no longer than 30 letters or could be empty.
 * 'Email' - A string in the format of example@anymail.com or could be empty.
