@@ -29,13 +29,13 @@ This is a simple terminal application for managing contacts. With this app, you 
 
 ## Example
 
-> $ add contact
->> Name: John
->> Surname: Doe
->> Email: john.doe@example.com
->> Phone Number: +37499000000
->> Gender: Male
->> Contact added successfully!
+  $ add contact
+    Name: John
+  Surname: Doe
+  Email: john.doe@example.com
+  Phone Number: +37499000000
+  Gender: Male
+  Contact added successfully!
 
 > $ get contact
 >> Name: John
