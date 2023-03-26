@@ -5,11 +5,11 @@ funcs.create_DB('info.db')
 
 print("This is a contact management system")
 print("Every contact has:")
-print(f"\t{'Name' :<20}: no longet than 30 letters and can't be empty")
-print(f"\t{'Surname' :<20}: no longet than 30 letters or could be empty")
-print(f"\t{'Email' :<20}: 'exapmle@anymail.com' and can't be empty")
+print(f"\t{'Name' :<20}: no longer than 30 letters and can't be empty")
+print(f"\t{'Surname' :<20}: no longer than 30 letters or could be empty")
+print(f"\t{'Email' :<20}: 'exapmle@anymail.com' or could be empty")
 print(f"\t{'Phone Number' :<20}: '+37490000000' and can't be empty")
-print(f"\t{'Gender' :<20}: male/female or could be emply\n")
+print(f"\t{'Gender' :<20}: male/female or could be empty\n")
 
 print("There are several commands you can use:")
 print(f"\t{'add contact' :<20}: to add contact of a person")
@@ -31,5 +31,5 @@ while command != "exit":
         command_list[command]()
     else:
         print("Command not found\n Enter correct command i.e. \
-    (add contact, get contact, delete contact, view contacts, exit)")
+            (add contact, get contact, delete contact, view contacts, exit)")
     command = input("Enter the command: ")
