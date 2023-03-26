@@ -51,6 +51,7 @@ def add():
         VALUES ('{name}','{surname if surname else 'NULL'}',NULL,'{phone}','{gender if gender else 'NULL'}')
         """
     db.execute_query(query)
+    print("Contact added successfully!")
 
 
 def get():
@@ -80,6 +81,7 @@ def delete():
         query = f"""DELETE FROM contacts
                     WHERE id = '{id}'"""
         db.execute_query(query)
+    print("Contact deleted successfully!")
 
 
 def view():
