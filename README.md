@@ -1,9 +1,9 @@
-#Contact Management Terminal App
+# Contact Management Terminal App
 
 This is a simple terminal application for managing contacts. With this app, you can easily add, view, get, and delete contacts.
 
-##Commands
-###The following commands are available in the app:
+## Commands
+### The following commands are available in the app:
 
 'add contact' - To add a new contact.
 'get contact' - To get the details of a specific contact.
@@ -11,8 +11,8 @@ This is a simple terminal application for managing contacts. With this app, you 
 'view contacts' - To view all saved contacts.
 'exit' - To exit the app.
 
-##Contact Attributes
-###Each contact has the following attributes:
+## Contact Attributes
+### Each contact has the following attributes:
 
 'Name' - A string no longer than 30 letters and can't be empty.
 'Surname' - A string no longer than 30 letters or could be empty.
