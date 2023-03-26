@@ -21,4 +21,36 @@ This is a simple terminal application for managing contacts. With this app, you 
 * 'Gender' - A string, either "male" or "female", or could be empty.
 
 
-Usage
+## Usage
+### To use the app, simply run the app.py file in a terminal:
+
+> python3 app.py
+
+
+## Example
+
+> $ add contact
+>> Name: John
+>> Surname: Doe
+>> Email: john.doe@example.com
+>> Phone Number: +37499000000
+>> Gender: Male
+>> Contact added successfully!
+
+> $ get contact
+>> Name: John
+>> Surname: Doe
+>> Email: john.doe@example.com
+>> Phone Number: +37499000000
+>> Gender: Male
+
+> $ delete contact
+>> Name: John
+>> Contact deleted successfully!
+
+> $ view contacts
+>> Name: John
+>> Surname: Doe
+>> Email: john.doe@example.com
+>> Phone Number: +37499000000
+>> Gender: Male
