@@ -5,7 +5,7 @@ class Validatior:
     @staticmethod
     def isValidEmail(email):
         pattern = "^\w+[_.-]?\w+[@]+[a-z]+[.]\w{2,3}$"
-        if re.search(pattern, email):
+        if re.search(pattern, email) or (not email):
             return True
         return False
 
@@ -21,7 +21,7 @@ class Validatior:
     def isValidSurname(surname):
         if len(surname) > 30:
             return False
-        elif re.fullmatch("[A-Za-z ]+", surname) or surname == '':
+        elif re.fullmatch("[A-Za-z ]+", surname) or (not surname):
             return True
         return False
 
