@@ -76,12 +76,11 @@ def get():
 def delete():
     print("If you dont know the 'id' of the contact press 'Enter'\n\
         Find it with 'get contact' and then delete it")
-    id = input("Enter the id: ")
-    if not id:
+    if id := input("Enter the id: "):
         query = f"""DELETE FROM contacts
-                    WHERE id = '{id}'"""
+                    WHERE id = {id}"""
         db.execute_query(query)
-    print("Contact deleted successfully!")
+        print("Contact deleted successfully!")
 
 
 def view():
